@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido de Ração</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8d34a; 
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            background-color: #0046ad; 
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .product-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            color: #0046ad; 
+        }
+        .btn-primary {
+            background-color: #0046ad;
+            border-color: #0046ad;
+        }
+        .btn-primary:hover {
+            background-color: #003b92;
+            border-color: #003b92;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 class="text-center">Raçoes para cachorro.com</h2>
+        </div>
+        
+        <form action="processa_pedido.php" method="POST" class="mt-3">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" class="form-control" id="nome" name="nome" required>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input type="text" class="form-control" id="cpf" name="cpf" required>
+            </div>
+            <div class="form-group">
+                <label for="numero">Número:</label>
+                <input type="text" class="form-control" id="numero" name="numero" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço de entrega:</label>
+                <input type="text" class="form-control" id="endereco" name="endereco" required>
+            </div>
+            <div class="form-group">
+                <label for="racao">Selecione a ração:</label>
+                <select class="form-control" id="racao" name="racao" required>
+                    <option value="Ração A">Ração A (Premier) - R$ 1110</option>
+                    <option value="Ração B">Ração B (Mediana) - R$ 300</option>
+                    <option value="Ração C">Ração C (Lisos) - R$ 10</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="doacao">Deseja fazer uma doação?</label>
+                <select class="form-control" id="doacao" name="doacao" required>
+                    <option value="1">Sim</option>
+                    <option value="0">Não</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar Pedido</button>
+        </form>
+
+        <div class="mt-5">
+            <h4>Confira nossas rações:</h4>
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="premier.jfif" alt="Ração A" class="product-img">
+                    <p>Ração A</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="mediana.jfif" alt="Ração B" class="product-img">
+                    <p>Ração B</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="lisos.jfif" alt="Ração C" class="product-img">
+                    <p>Ração C</p>
+                </div>
+                <p><a href="exibir_pedidos.php">PEDIDOS JÁ REALIZÁDOS</a></p>
+
+              
+                
+            </div>
+            <form action="pesquisar_pedidos.php" method="GET" class="mt-3">
+                <div class="form-group">
+                    <label for="termo">Realizar uma pesquisa por nome ou CPF:</label>
+                    <input type="text" class="form-control" id="termo" name="termo" placeholder="Digite o nome ou CPF">
+                </div>
+                <button type="submit" class="btn btn-primary">Pesquisar</button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Incluindo o jQuery, uma biblioteca JavaScript que facilita bastante a manipulação do HTML, CSS, e Ajax -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Incluindo o Popper.js, uma biblioteca que ajuda a gerenciar pop-ups e dropdowns de forma mais eficaz -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!--  Bootstrap.js, que depende do jQuery e Popper.js, para os componentes interativos do Bootstrap funcionarem -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
